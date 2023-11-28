@@ -2431,4 +2431,8 @@ return [
     "Finances" => "Finances",
     "IsFinancedBy" => "Is financed by",
     "IsVersionOf" => "Is version of",
+
+    // #133 accepted article empty
+
+    "Il n'y a actuellement aucun article en attente" => "there are currently no pending articles"
 ];

@@ -3,8 +3,11 @@
  * @var Episciences_Review $journal
  */
 $journal = $this->journal;
+$classDiv = "";
 ?>
-<div id="browse-accepted-papers">
+<?php $classDiv = (!empty($this->acceptedPapers)) ? "browse-accepted-papers": "browse-accepted-papers-empty" ; ?>
+<div id="<?= $classDiv ?>">
+    <?php if (!empty($this->acceptedPapers)):?>
     <ul>
         <?php foreach ($this->acceptedPapers as $acceptedPaper) :
             /** @var Episciences_Paper $acceptedPaper */
@@ -40,4 +43,7 @@ $journal = $this->journal;
             </li>
         <?php endforeach; ?>
     </ul>
+    <?php else: ?>
+        <div><?= $this->translate("Il n'y a actuellement aucun article en attente") ?></div>
+    <?php endif;?>
 </div>
